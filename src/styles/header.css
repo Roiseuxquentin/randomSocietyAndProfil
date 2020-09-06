@@ -1,0 +1,32 @@
+
+/*HEADER*/
+.selectedNb {
+  border-bottom:  solid 2px #c1c1c1;
+}
+
+.header { 
+  display: flex;
+  justify-content: space-around;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 130px;
+  z-index: 3;
+
+  border-bottom: solid black 2px;
+  background: white;
+  transition: 0.5s;
+}
+
+.header * {
+  color: black;
+  margin: auto;
+  transition: 1s;
+}
+.header *:hover {
+  cursor: pointer; 
+  color: #c1c1c1;
+  transition: 0.5s;
+}

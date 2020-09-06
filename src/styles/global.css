@@ -1,0 +1,98 @@
+
+/*//////////////////////////////////////////////////////////////////*/
+
+/*BASIC*/
+.center {
+  justify-content: center;
+  margin:auto;
+  text-align: center;
+}
+.aDroite {
+  justify-content: end;
+  text-align: right ;
+}
+.aGauche {
+  justify-content: start;
+  text-align: left; 
+}
+.underline {
+  text-decoration: underline;
+}
+.red * { 
+  color : red !important;
+}
+.purple {
+  color:purple;
+}
+.blue {
+  color:#0265D6;
+}
+.blueTwitter {
+  color : #00acee;
+}
+.black {
+  color:black;
+}
+.white {
+  color:white;
+}
+.casperColor {
+  color : transparent;
+}
+.dbug {
+  border : solid 4px red;
+}
+.finger {
+  cursor : pointer;
+}
+.cursorDefault {
+    cursor: default;
+}
+.cursorInterdit {
+  cursor: not-allowed;
+}
+.invisible {
+  display: none;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.max{
+  width: 100%;
+}
+.margin {
+  margin: 30px;
+}
+.marginT {
+  margin-top: 30px;
+}
+.marginB {
+  margin-bottom: 30px;
+}
+.noMargin {
+  margin : none;
+}
+.noBorder {
+  border:none !important;
+}
+.italic {
+  font-style: italic;
+}
+.endStick {
+  position: fixed;
+  bottom: 0;
+}
+.inMiddleScreen {
+  position:fixed;
+  
+  top: 50%;
+  left: 50%;
+
+  width: 30em;
+  height: 18em;
+  margin-top: -9em;/* set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}
