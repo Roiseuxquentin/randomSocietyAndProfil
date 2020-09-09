@@ -16,8 +16,8 @@ const Society = ({name,address, display}) => {
   if (display) {
     return ( 
       <div className='society' >
-        <h1>{name}</h1> 
-        <p style={{fontStyle : 'italic'}} >{address}</p> 
+        <h1 className="societyName">{name}</h1> 
+        <p className="societyAddress" >{address}</p> 
       </div> )
   } else {
     return <div />

@@ -5,11 +5,12 @@ import Body from './components/Body.js'
 import Footer from './components/Footer.js'
 
 import './App.css';
-import './styles/footer.css';
 import './styles/global.css';
 import './styles/body.css';
 import './styles/society.css';
+import './styles/footer.css';
 import './styles/animate.css';
+import './styles/phone.css';
 
 /*/=============================================\
   ||                      .__                  ||
@@ -23,23 +24,13 @@ import './styles/animate.css';
 
 class App extends Component {
 
-  constructor(props) {
-      super(props)
-      this.state = {
-      societes : []
-  }
-
-      this.action = this.action.bind()
+  state = {
+    societes : []
   }
 
   componentDidMount() {
     console.clear()
     document.onselectstart = new Function ("return false")
-  }
-
-  action() {
-    const text = 'je lis'
-    return text
   }
 
   render() {

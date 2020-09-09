@@ -33,12 +33,15 @@ class Header extends Component {
 		if (this.state.current) {
 			document.getElementById("header").style.opacity = 0
 			document.getElementById("header").style.height = "25px"
+			document.getElementById("downHeader").style.opacity = 1
+
 		}
 	}
 
 	display() {
 		document.getElementById("header").style.opacity = 1
 		document.getElementById("header").style.height = "130px"
+		document.getElementById("downHeader").style.opacity = 0
 	}
 
 	changePage(event) {
@@ -61,13 +64,18 @@ class Header extends Component {
 	}
 
 	render() {
-		return (<div className="header" id="header" 
-					onMouseEnter={ () => this.display() } 
-					onMouseLeave={ () => this.hidden()  } >
-			  		{ 	this.state.pages.map((page,index) => <h1 id={page} 
-																key={index}
-																className={(page == this.state.current) ? "selectedNb" : ""}
-																onClick={(event) => this.changePage(event)} >{page.toUpperCase()}</h1>) }
+		return (<div>
+					<img src="https://image.flaticon.com/icons/svg/566/566015.svg" id="downHeader" />
+					<div className="header" id="header" 
+							onMouseEnter={ () => this.display() } 
+							onMouseLeave={ () => this.hidden()  } >
+							
+
+					  		{ 	this.state.pages.map((page,index) => <h1 id={page} 
+																		key={index}
+																		className={(page == this.state.current) ? "selectedNb" : ""}
+																		onClick={(event) => this.changePage(event)} >{page.toUpperCase()}</h1>) }
+					 	</div>
 			 	</div>)
 	}
 }

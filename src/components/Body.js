@@ -25,6 +25,7 @@ class Body extends Component {
 
   state = {
       base : [],
+      limit : 1,
       littleSize : true,
       name : "",
       number : "",
@@ -33,20 +34,30 @@ class Body extends Component {
   }
 
   componentDidMount() {
+    this.INSEE()
+    setTimeout(() => this.INSEE() , 5000 )
+  }
+
+  INSEE() {
     if (this.state.base.length == 0) {
-      fetch("https://entreprise.data.gouv.fr/api/sirene/v3/etablissements/", { method: 'GET' } )
+      fetch("https://entreprise.data.gouv.fr/api/sirene/v3/etablissements/?per_page=50", { method: 'GET' } )
       .then(res => res.json())
-      .then(res => { 
-        this.setState({base : res.etablissements })
+      .then(res => {
+        const resultFiltered = res.etablissements.filter(elt => (elt.unite_legale.categorie_juridique != "1000") )
+        console.log("RESULT FILTERED", resultFiltered)
+        return resultFiltered
+      })
+      .then(etablissements => {
+        console.log("POST FILTRAGE")
+        this.setState({base : etablissements , limit : etablissements.length })
         return
       })
       .then(res => this.setState({loaded : true}) )
-    }
+    } else return
   }
 
-
   action() {
-    const random = randomNumber(0,20)
+    const random = randomNumber(0,this.state.limit)
 
     if (this.state.base.length > 0) {
 
@@ -61,6 +72,12 @@ class Body extends Component {
     }
   }
 
+  openINSEE(e) {
+    e.preventDefault();
+    const url = "https://entreprise.data.gouv.fr/api_doc/"
+    window.open(url,'_blank');
+  }
+
   render() {
       if (this.state.loaded) {
         
@@ -73,6 +90,7 @@ class Body extends Component {
         return <div className="loader">
                   <Loader type="TailSpin" color="black"
                        height={180} width={180} />
+                  <p className="loadingText finger blueHover" onClick={(e) => this.openINSEE(e)} >INSEE</p> 
               </div>
       }
   }

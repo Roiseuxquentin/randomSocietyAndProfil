@@ -3,18 +3,39 @@
   top: 60vh;
   left: 0vw;
   width: 100vw;
+  background: white;
 }
 .society {
   text-align: center;
   margin-top: 24vh;
   width:100%;
 }
+
+.societyName, .societyAddress {
+  cursor: default;
+}
+.societyName {
+  font-size: 65px;
+  font-family: 'Londrina Outline', cursive;
+  margin-bottom: 0;
+  z-index: 2;
+}
+.societyAddress {
+  margin-top: 0;
+  font-family: 'Heebo', sans-serif;
+  font-style : italic;
+  font-size: 18px;
+  color: #757575;
+  z-index: -1;
+}
+
 figure {
   margin: none;
 }
 
 pre, code {
-  font-family: monospace, monospace;
+  cursor: default;
+  /*font-family: monospace, monospace;*/
   transition: 0.5s;
   width: 100vw;
   height:90px;
@@ -30,8 +51,14 @@ pre {
 }
 pre > code {
   /*padding: 1rem;*/
+  font-family: 'Play', sans-serif;
+
   font-size: 70px;
   word-wrap: normal;
+}
+.code:hover {
+  color : #c4c2ca;
+  transition: 1s;
 }
 
 select {

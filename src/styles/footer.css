@@ -11,10 +11,11 @@
 
 .footerItem {
   transition: 0.3s;
-  padding: 25px;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 27px;
   height: 30px;
   width: 30px; 
-  margin: 20px;
 }
 .footerItem:hover  {
   background: transparent;

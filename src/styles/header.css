@@ -30,3 +30,14 @@
   color: #c1c1c1;
   transition: 0.5s;
 }
+
+#downHeader {
+
+  position: absolute;
+  z-index: -1;
+  top : 10px;
+    
+  width: 25px;
+  height: auto;
+  transition: 0.2s;
+}

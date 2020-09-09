@@ -6,7 +6,7 @@
   z-index: 1;
   position: absolute;
   top: 100px;
-  right: 5vw;
+  right: 8vw;
   color: black;
   text-align: start;
 }
@@ -130,7 +130,7 @@ input {
 
   box-sizing: border-box;
   padding: 0 40px 0 10px;
-  width: 75vw;
+  width: 84vw;
   height: 50px;
   border: 4px solid black;
   border-radius: 0;
@@ -167,7 +167,7 @@ pre:hover {
   background: white radial-gradient(circle, transparent 1%, white 1%) center/15000%;
 }
 pre:active {
-  background-color: #c1c1c1;
+  background-color: #6d6c71;
   /*background-color: #D5F5E3;*/
   /*background-color: #D2B4DE;*/
   background-size: 100%;
