@@ -21,7 +21,7 @@ const Image = ({bool,action}) => {
 		window.open(url,'_blank');
 	}
 
-    return (<div className="fadeIn displayHover">
+    return (<div className="displayHover ">
 
 	    		<svg className={(bool) ? "random fadeIn" : "randomMini fadeIn"} onClick={(e) => action(e)}
 					fill="black" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg">
@@ -29,8 +29,7 @@ const Image = ({bool,action}) => {
 			    	<path className="fadeIn" d="M0 0h24v24H0z" fill="none"/>
 				</svg>
 		    	{(bool)  
-		    		? <p className="aide" > Cliquez pour afficher un <span>SIRET</span> aleatoire en provenance de l'
-		    			<span className="finger blueHover" onClick={(e) => openINSEE(e)} >INSEE</span> </p> 
+		    		? <p className="aide" > Cliquez pour afficher un <span>SIRET</span> aleatoire en provenance de l'<span className="finger blueHover" onClick={(e) => openINSEE(e)} >INSEE</span></p>
 		    		: console.log("")}
 	    	</div> )
 

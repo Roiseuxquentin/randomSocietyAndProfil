@@ -81,16 +81,18 @@ class Body extends Component {
   render() {
       if (this.state.loaded) {
         
-        return (<AnimateOnChange>
-                <Image bool={this.state.littleSize} action={() => this.action()} />
-                <Society name={this.state.name} address={this.state.address} display={!this.state.littleSize} />
-                <SocietyId number={this.state.number} />
-              </AnimateOnChange>)
+        return (<div>
+                  <Image bool={this.state.littleSize} action={() => this.action()} />
+                  <AnimateOnChange>
+                    <Society name={this.state.name} address={this.state.address} display={!this.state.littleSize} />
+                    <SocietyId number={this.state.number} />
+                  </AnimateOnChange>
+                </div>)
       } else {
         return <div className="loader">
                   <Loader type="TailSpin" color="black"
                        height={180} width={180} />
-                  <p className="loadingText finger blueHover" onClick={(e) => this.openINSEE(e)} >INSEE</p> 
+                  <p className="loadingText finger blueHover" onClick={(e) => this.openINSEE(e)} >Chargement . . .</p> 
               </div>
       }
   }

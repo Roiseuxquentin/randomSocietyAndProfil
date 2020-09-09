@@ -34,21 +34,24 @@
   color: #757575;
   cursor: default;
 }
-.loadingText, .aide span {
-  font-weight: 700;
-  text-decoration: underline;
-}
 .loadingText {
+  font-weight: 500;
   padding-top: 25px;
 }
 .aide {
-  transition: 2s;
+  position: relative;
+  z-index: 3;
+  transition: 0.5s;
   font-style: italic;
-  display: none;
+  opacity: 0.4;
+}
+.aide span {
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .displayHover:hover .aide {
-  display: block;
+  opacity: 1;
 }
 
 .blueHover {
