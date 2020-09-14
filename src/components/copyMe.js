@@ -1,19 +1,4 @@
-import React, {Component} from 'react';
-
-import '../styles/societyId.css';
-
-import React from 'react'
-
-// ################################################### 
-// #*/=============================================\*# 
-// # ||                      .__                  || #
-// # ||   ____   ____   ____ |  |   ____   ____   || #
-// # || _/ __ \_/ __ \ / ___\|  |  /  _ \ /  _ \  || #
-// # || \  ___/\  ___// /_/  >  |_(  <_> |  <_> ) || #
-// # ||  \___  >\___  >___  /|____/\____/ \____/  || #
-// # ||      \/     \/_____/                  2020|| #
-// #.\=============================================/.#
-// ###################################################
+import React from 'react';
 
 // THX https://hackernoon.com///////////////////////
 const copyToClipboard = str => {                  //
@@ -33,24 +18,8 @@ const copyToClipboard = str => {                  //
   if (selected) {                                 // If a selection existed before copying
     document.getSelection().removeAllRanges();    // Unselect everything on the HTML document
     document.getSelection().addRange(selected);   // Restore the original selection
-                            //
-  }                         //
-}                         //
+  }
+}
 // THX https://hackernoon.com///////////////////////
 
-const SocietyId = ({txt}) => {
-
-    return ( 
-      <div>
-        <figure  >
-          <pre key={index + Math.random()} style={{marginTop : "6px"}} >
-            <code className="finger code" onClick={(event)=> copyToClipboard(txt) } >
-            {txt}
-            </code>
-          </pre>
-
-        </figure> 
-      </div> )
-  }
-
-export default SocietyId
+export default copyToClipboard

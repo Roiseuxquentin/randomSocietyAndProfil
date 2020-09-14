@@ -18,10 +18,15 @@
 }
 
 .randomMini {
-  width:90px;
+  width:95px;
   position: fixed;
-  top:40vh;
-  right: 8vw;
+  bottom: 5vh;
+  right: 5vw;
+}
+.coucou {
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation: coucou 0.9s both;
+          animation: coucou 0.9s both;
 }
 
 .random:hover , .randomMini:hover { 
@@ -49,7 +54,6 @@
   font-weight: 700;
   text-decoration: underline;
 }
-
 .displayHover:hover .aide {
   opacity: 1;
 }
@@ -58,7 +62,7 @@
   transition : 0.5s;
 }
 .blueHover:hover {
-  color : #27dcfa;
+  color : #18c0f2;
 }
 
 @-ms-keyframes spin {

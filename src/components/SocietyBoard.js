@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-import ReactTooltip from 'react-tooltip';
-
-import copyToClipboard from './copyMe.js'
 
 // ################################################### 
 // #*/=============================================\*# 
@@ -14,21 +11,17 @@ import copyToClipboard from './copyMe.js'
 // #.\=============================================/.#
 // ###################################################
 
-const SocietyId = ({number}) => {
+const SocietyBoard = ({name,address, display}) => {
 
+  if (display) {
     return ( 
-      <div className='identifiant' >
-        <figure style={{margin : "0px"}} >
-          <pre >
-            <code data-tip={"Cliquez pour ajouter le SIRET au presse papier"} 
-                  className="finger code" 
-                  onClick={(event)=> copyToClipboard(number) } >
-            {number}
-            </code>
-          </pre>
-        </figure> 
-        <ReactTooltip />
+      <div className='society' >
+        <h1 className="societyName">{name}</h1> 
+        <p className="societyAddress" >{address}</p> 
       </div> )
+  } else {
+    return <div />
   }
+}
 
-export default SocietyId
+export default SocietyBoard

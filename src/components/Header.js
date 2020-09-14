@@ -19,7 +19,7 @@ class Header extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			pages : ["tva" ,"siret" ,"taxe Number", "RCI" ],
+			pages : [ "profils" ,"entreprises"  ],
 			mode : false,
 			current : "siret"
 		}
@@ -34,7 +34,6 @@ class Header extends Component {
 			document.getElementById("header").style.opacity = 0
 			document.getElementById("header").style.height = "25px"
 			document.getElementById("downHeader").style.opacity = 1
-
 		}
 	}
 
@@ -56,7 +55,7 @@ class Header extends Component {
 			}
 		})
 		
-		// this.props.onChange(event)
+		this.props.onChangePage(event)
 		this.setState({current : current})
 		
 		scrollPosition = 0
@@ -69,7 +68,6 @@ class Header extends Component {
 					<div className="header" id="header" 
 							onMouseEnter={ () => this.display() } 
 							onMouseLeave={ () => this.hidden()  } >
-							
 
 					  		{ 	this.state.pages.map((page,index) => <h1 id={page} 
 																		key={index}

@@ -1,0 +1,117 @@
+.card {
+	margin : auto;
+	margin-top:  22vh;
+	width: 100vw;
+	display: grid;
+	justify-content: center;
+}
+
+.card li {
+	cursor: default;
+}
+
+.profilTof:hover {
+	box-shadow: 0 0 11px rgba(33,33,33,.5); 
+	border : solid 0.3px transparent;
+}
+.profilTof {
+	padding: 3px;
+	border : solid 0.3px #eceff1;
+	border-radius: 360px;
+	width: 150px;
+	height: 150px;
+
+}
+
+.profilInfoNatif * { 
+	cursor : pointer;
+}
+/*NOM PRENOM*/
+.profilName { 
+	font-family: 'Michroma', sans-serif;
+	margin-bottom: 5px;
+	margin-top: 8px;
+}
+.profilName .prenom { 
+	font-weight: 600;
+	font-size: 25px;
+}
+.profilName .prenom { 
+	font-weight: 300;
+	font-size: 22px;
+}
+/*DATE NAISSANCE*/
+.profilInfoNatif h3 {
+  	font-family: 'Heebo', sans-serif;
+
+	margin-bottom: 15px;
+	margin-top: 0px;
+} 
+.age {
+  	font-family: 'Heebo', sans-serif;
+  	margin-bottom: 6px !important;
+  	cursor: select;
+}
+.city  {
+	margin-top: 0;
+	text-align: center;
+}
+.city span {
+	font-family: 'Play', sans-serif;
+	padding-left: 30px;
+}
+.metier {
+	font-size: 22px;
+
+	cursor : default;
+
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+.contact {
+  	font-family: 'Heebo', sans-serif;
+	font-size: 18px;
+
+	text-align: center;
+	margin: 0;
+}
+.contact span {
+	font-family: 'Play', sans-serif;
+	
+	padding-left: 30px;
+}
+
+/*ICONS*/
+.profilTofContainer {
+	display:grid;
+	width: 60px;
+}
+.profilIconBank {
+	cursor: pointer;
+	width: 32px;
+	height: 32px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+.profilIconContainer {
+	width: 500px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.profilIcon:hover {
+	box-shadow: 0 0 11px rgba(33,33,33,.5); 
+	border : solid 0.3px transparent;
+}
+.profilIcon {
+	cursor: pointer;
+	border-radius: 360px;
+	border : solid 0.3px transparent;
+	
+	width: 30px;
+	height: 30px;
+	
+	margin: 15px;
+	padding: 3px;
+}

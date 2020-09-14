@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 
+import Profils from './components/Profils.js'
 import Header from './components/Header.js'
-import Body from './components/Body.js'
-import Footer from './components/Footer.js'
+import Society from './components/Society.js'
+import Image from './components/Image.js'
 
 import './App.css';
 import './styles/global.css';
 import './styles/body.css';
+import './styles/profils.css';
 import './styles/society.css';
-import './styles/footer.css';
 import './styles/animate.css';
 import './styles/phone.css';
 
@@ -25,20 +26,32 @@ import './styles/phone.css';
 class App extends Component {
 
   state = {
-    societes : []
+    societes : [],
+    page : "profil",
+
   }
 
   componentDidMount() {
-    console.clear()
     document.onselectstart = new Function ("return false")
+  }
+
+  onChangePage(e) {
+    if (e && e.target && e.target.id) {
+      this.setState({page : e.target.id})
+    }
   }
 
   render() {
       return (
           <div>
-            <Header />
-            <Body societes={this.state.societes} />
-            <Footer />
+            <Header onChangePage={(e) => this.onChangePage(e)} />
+            { (this.state.page == "entreprises") ? 
+            (<div>
+                <Image page="Lycos" bool="Lycos" action={()=>console.clear()} action={() => console.clear()}  />
+                <Society societes={this.state.societes} page={this.state.page} />
+              </div>)
+              : <Profils societes={this.state.societes} page={this.state.page} />
+            }
           </div>
       )
   }

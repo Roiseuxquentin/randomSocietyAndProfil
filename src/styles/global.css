@@ -54,6 +54,12 @@
 .invisible {
   display: none;
 }
+.hide {
+  visibility: hidden;
+}
+.display {
+  visibility: visible;
+}
 .flex {
   display: flex;
 }
@@ -74,6 +80,9 @@
 }
 .noMargin {
   margin : none;
+}
+.noPadding {
+  padding: none;
 }
 .noBorder {
   border:none !important;

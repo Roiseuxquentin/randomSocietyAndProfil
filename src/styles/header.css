@@ -33,11 +33,11 @@
 
 #downHeader {
 
-  position: absolute;
   z-index: -1;
   top : 10px;
     
   width: 25px;
-  height: auto;
+  height: 25px;
+  
   transition: 0.2s;
 }
