@@ -64,8 +64,8 @@ class HumanCard extends Component {
 				break;
 			case "Bank" :
 				(this.state.genre == "Masculin")
-				? url = "https://www.epictura.fr/search?keyword=profil+man&order=5&orientation=&imagesize=s&color=&categories=&username=&media_type=0&editorial=&gender=male&race=&age=&nudity=0"
-				: url = "https://www.epictura.fr/search?age=&categories=&color=&editorial=&gender=female&imagesize=s&keyword=profil%20woman&media_type=0&nudity=0&orientation=&race=&username=&order=5"
+				? url = "https://www.epictura.fr/search?age=&categories=&color=&editorial=&gender=male&imagesize=&keyword=man&media_type=0&nudity=0&orientation=&race=&username=&order=5"
+				: url = "https://www.epictura.fr/search?age=&categories=&color=&editorial=&gender=female&imagesize=&keyword=woman&media_type=0&nudity=0&orientation=&race=&username=&order=5"
 				break;
 			default :
 				console.clear()
@@ -129,36 +129,9 @@ class HumanCard extends Component {
 
 	    				<div className="profilTofContainer center" >
 		    				<AnimateOnChange>
-			    				<img className={display ? "profilIconBank" : "hide profilIconBank"} data-tip="depot de photos" 
-		    						onClick={(e) => this.openUrl(e)} id="Bank" src={bankIcon} alt="bank profil photo" />
-		    				</AnimateOnChange>
-		    				<img className="profilTof center finger"
-		    						onClick={(e) => this.more(e)} onDoubleClick={(e) => this.preventClickJacking(e)}
-		    						id="tof" src={this.state.img} alt=""  />
-		    			</div>
-		    			<div className="profilInfoNatif">
-	    					<h2 className="profilName" >
-	    						<span onClick={(event)=> copyToClipboard(this.state.nom) } data-tip="copier"
-	    								className="nom">{this.state.nom}</span> ,
-	    						<span onClick={(event)=> copyToClipboard(this.state.prenom) } data-tip="copier"
-	    								className="prenom">{this.state.prenom}</span>
-    						</h2>
-			    				<div>
-					    			<h3 className={(display ) ? "age" : "invisible"}>{this.state.age} ans</h3>
-					    			<h3 onClick={(event)=> copyToClipboard(this.state.date) } data-tip="copier"
-					    					className={(display ) ? "invisible" : ""}>{this.state.date}</h3>
-					    			<p onClick={(event)=> copyToClipboard(this.state.ville) } data-tip="copier"
-				    					className={(display ) ? "city" : "invisible"}>{this.state.ville} 
-				    					<span onClick={(event)=> copyToClipboard(this.state.zip) } >{this.state.zip}</span></p>
-					    			<h4 onClick={(event)=> copyToClipboard(this.state.metier) } data-tip="copier"
-				    					className={(display ) ? "invisible" : "metier"}>{this.state.metier}</h4>
-					    			<p onClick={(event)=> copyToClipboard(this.state.mail) } data-tip="copier"
-				    					className={(display ) ? "invisible" : "contact"}>{this.state.mail} 
-				    					<span onClick={(event)=> copyToClipboard(this.state.phone) } data-tip="copier" >{this.state.phone}</span></p>
-			    				</div>	
-		    			</div>
-	    				<AnimateOnChange>
 	    					<div className="profilIconContainer">
+		    				<img className={(display) ? "invisible" : "profilIconBank"} data-tip="depot de photos" 
+	    						onClick={(e) => this.openUrl(e)} id="Bank" src={bankIcon} alt="bank profil photo" />
 			    				{ this.state.icons.map((icon,i) => <img id={icon.name} 
 			    													className={(display) ? "profilIcon" : "invisible"} 
 		    														onClick={(e) => this.openUrl(e)}
@@ -167,6 +140,41 @@ class HumanCard extends Component {
 		    														src={icon.src} alt={icon.name} /> )}
 		    				</div>
 	    				</AnimateOnChange>
+		    				<img className="profilTof center finger"
+		    						onClick={(e) => this.more(e)} onDoubleClick={(e) => this.preventClickJacking(e)}
+		    						id="tof" src={this.state.img} alt=""  />
+		    			</div>
+		    			<div className="profilInfoNatif">
+	    					<h2 className="profilName" >
+	    						<span onClick={(event)=> copyToClipboard(this.state.nom) } data-tip="copier"
+	    								className="nom littleRipple">{this.state.nom}</span> ,
+	    						<span onClick={(event)=> copyToClipboard(this.state.prenom) } data-tip="copier"
+	    								className="prenom littleRipple">{this.state.prenom}</span>
+    						</h2>
+		    				<div >
+			    				
+				    			<h3 className={(display ) ? "age" : "invisible"}>{this.state.age} ans</h3>
+				    			
+				    			<h3 onClick={(event)=> copyToClipboard(this.state.date) } 
+				    					className={(display ) ? "invisible" : "date littleRipple"}>{this.state.date}</h3>
+				    			<p>
+				    				<span onClick={(event)=> copyToClipboard(this.state.ville) } 
+			    							className={(display ) ? "city littleRipple" : "invisible"}>{this.state.ville}</span> 
+			    					<span className={(display ) ? "zip littleRipple" : "invisible"} 
+			    							onClick={(event)=> copyToClipboard(this.state.zip) }  >{this.state.zip}</span>
+    							</p>
+				    			
+				    			<h4 onClick={(event)=> copyToClipboard(this.state.metier) }
+			    					className={(display ) ? "invisible" : "metier"}>{this.state.metier}</h4>
+				    			
+				    			<p>	
+				    				<span onClick={(event)=> copyToClipboard(this.state.mail) } 
+			    					className={(display ) ? "invisible" : "mail littleRipple"}>{this.state.mail} </span>
+			    					<span onClick={(event)=> copyToClipboard(this.state.phone) } className={(display ) ? "invisible" : "littleRipple number"}   >{this.state.phone}</span>
+		    					</p>
+
+		    				</div>	
+		    			</div>
 					 </div> )
 	    } else {
 	    	return <div />

@@ -19,7 +19,7 @@ const SocietyId = ({number}) => {
     return ( 
       <div className='identifiant' >
         <figure style={{margin : "0px"}} >
-          <pre >
+          <pre className="rippleEffect" >
             <code data-tip={"Cliquez pour ajouter le SIRET au presse papier"} 
                   className="finger code" 
                   onClick={(event)=> copyToClipboard(number) } >

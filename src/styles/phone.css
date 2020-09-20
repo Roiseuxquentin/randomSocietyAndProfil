@@ -1,17 +1,25 @@
 @media (max-width: 800px) {
-	.header , #downHeader { 
+	.header , #downHeader , #lycos , .profilIcon , .profilIconBank{ 
 		display: none;
 	}
     .societyName  {
     	font-family: 'Roboto Mono', monospace;
-  		font-size: 18px;
+  		font-size: 22px;
+		margin-top:  200px;
 	}
 	.societyAddress {
-		font-size : 12px;
+		font-size : 14px;
 	}
 	pre > code {
-		  font-size: 30px;
+	  font-size: 34px;
 	}
-		
-  
+
+	.card {
+		margin-top:  100px;
+	}
+
+	.randomMini {
+		left : 20px;
+		top : 20px ;
+	}
 }

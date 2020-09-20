@@ -10,6 +10,8 @@ import formatAddress from './formatAddress.js'
 import formatName from './formatName.js'
 import randomNumber from './randomNumber.js'
 
+import zipCode from '../data/zipCity.json'
+
 // ################################################### 
 // #*/=============================================\*# 
 // # ||                      .__                  || #
@@ -37,12 +39,24 @@ class Society extends Component {
 
   componentDidMount() {
     this.INSEE()
-    setTimeout(() => this.INSEE() , 5000 )
+    setTimeout(() => this.INSEE() , 6500 )
   }
 
   INSEE() {
     if (this.state.base.length == 0) {
-      fetch("https://entreprise.data.gouv.fr/api/sirene/v3/etablissements/?per_page=50", { method: 'GET' } )
+      const zip = zipCode[randomNumber(0,zipCode.length)]
+      
+      const myHeaders = new Headers()
+      myHeaders.append('cache-control', 'no-store, no-cache')
+
+      const params = {
+        method: 'GET',
+        headers: myHeaders,
+      }
+
+
+
+      fetch(`https://entreprise.data.gouv.fr/api/sirene/v3/etablissements/?code_postal=${zip}&per_page=100`, params)
       .then(res => res.json())
       .then(res => {
         const resultFiltered = res.etablissements.filter(elt => (elt.unite_legale.categorie_juridique != "1000") )
@@ -92,11 +106,13 @@ class Society extends Component {
   }
 
   render() {
-      if (this.state.loaded) {
+      if (this.state.loaded && !!this.state.base[0] ) {
                 
         return (<div className="noMargin noPadding">
-      
-                  <Image bool={this.state.littleSize} action={() => this.action()} page={"siret"}  stopIt={() => this.preventClickJacking() } />
+        
+                  <Image bool={this.state.littleSize} action={() => this.action()} 
+                          page={"siret"}  stopIt={() => this.preventClickJacking() }
+                          nb={this.state.base.length} city={this.state.base[0].libelle_commune} zip={this.state.base[0].code_postal} />
                     { ( !this.state.littleSize ) 
                       ? (<AnimateOnChange>
                             <SocietyBoard name={this.state.name} address={this.state.address} display={!this.state.littleSize} />

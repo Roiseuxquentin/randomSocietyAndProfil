@@ -1,6 +1,6 @@
 .card {
 	margin : auto;
-	margin-top:  22vh;
+	margin-top:  12vh;
 	width: 100vw;
 	display: grid;
 	justify-content: center;
@@ -22,12 +22,13 @@
 	height: 150px;
 
 }
-
+/*
 .profilInfoNatif * { 
 	cursor : pointer;
-}
+}*/
 /*NOM PRENOM*/
 .profilName { 
+	cursor: copy !important;
 	font-family: 'Michroma', sans-serif;
 	margin-bottom: 5px;
 	margin-top: 8px;
@@ -42,21 +43,28 @@
 }
 /*DATE NAISSANCE*/
 .profilInfoNatif h3 {
+ 
   	font-family: 'Heebo', sans-serif;
 
 	margin-bottom: 15px;
 	margin-top: 0px;
 } 
 .age {
+	cursor: default !important;
   	font-family: 'Heebo', sans-serif;
   	margin-bottom: 6px !important;
-  	cursor: select;
+}
+.date {
+	cursor: copy !important;
 }
 .city  {
+	cursor: copy !important;
+
 	margin-top: 0;
 	text-align: center;
 }
-.city span {
+.zip {
+	cursor: copy !important;
 	font-family: 'Play', sans-serif;
 	padding-left: 30px;
 }
@@ -68,30 +76,39 @@
 	margin-top: 20px;
 	margin-bottom: 5px;
 }
-.contact {
+.mail {
   	font-family: 'Heebo', sans-serif;
 	font-size: 18px;
+	cursor: copy !important;
 
 	text-align: center;
 	margin: 0;
 }
-.contact span {
+.number {
 	font-family: 'Play', sans-serif;
+	cursor: copy !important;
 	
 	padding-left: 30px;
 }
 
 /*ICONS*/
+
 .profilTofContainer {
 	display:grid;
 	width: 60px;
 }
-.profilIconBank {
+.profilIcon , .profilIconBank {
 	cursor: pointer;
-	width: 32px;
-	height: 32px;
-	margin: auto;
-	margin-bottom: 10px;
+	width: 30px;
+	height: 30px;
+	
+	/*margin: 15px;*/
+	border-radius: 360px;
+	border : solid 0.3px transparent;
+
+	/*margin: auto;*/
+	padding: 3px;
+	margin-bottom: 20px;
 }
 
 .profilIconContainer {
@@ -100,18 +117,7 @@
 	justify-content: space-around;
 }
 
-.profilIcon:hover {
+.profilIcon:hover ,.profilIconBank:hover {
 	box-shadow: 0 0 11px rgba(33,33,33,.5); 
 	border : solid 0.3px transparent;
-}
-.profilIcon {
-	cursor: pointer;
-	border-radius: 360px;
-	border : solid 0.3px transparent;
-	
-	width: 30px;
-	height: 30px;
-	
-	margin: 15px;
-	padding: 3px;
 }

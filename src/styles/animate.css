@@ -1,5 +1,12 @@
 
+/*//////////////////////////////////////////////////////////////////*/
+/*ANIMATION*/
+/*//////////////////////////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////////////////////*/
+
 /*SEARCH*/
+
+/*//////////////////////////////////////////////////////////////////*/
 
 #lycos {
   /*overflow: hidden;*/
@@ -154,40 +161,58 @@ input {
 }
 
 /*//////////////////////////////////////////////////////////////////*/
-/*ANIMATION*/
-/*//////////////////////////////////////////////////////////////////*/
 
 /* Ripple effect */
 
-pre {
+/*//////////////////////////////////////////////////////////////////*/
+
+.littleRipple ,.rippleEffect {
   background-position: center;
   border-radius: 50px;
   transition: background 0.8s;
 }
-pre:hover {
+.littleRipple:hover ,.rippleEffect:hover {
   background: white radial-gradient(circle, transparent 1%, white 1%) center/15000%;
 }
-pre:active {
+.rippleEffect:active {
   background-color: #eceff1;
   /*background-color: #D5F5E3;*/
   /*background-color: #D2B4DE;*/
   background-size: 100%;
   transition: background 0s;
 }
-pre:active, code:active {
+.littleRipple:active {
+  background-size: 100%;
+  transition: background 0s;
+  background-color: #455a64;
+
+}
+.littleRipple:active ,.rippleEffect:active, code:active {
   cursor: copy !important;
 }
 
 /*//////////////////////////////////////////////////////////////////*/
 
+/*CLICK PULSE EFFECT*/
+
+/*//////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////*/
+
 /*FADE IN*/
 
- .fadeIn * {
-    -webkit-animation: fadein 0.7s; /* Safari, Chrome and Opera  */
-       -moz-animation: fadein 0.7s; /* Firefox  */
-        -ms-animation: fadein 0.7s; /* Internet Explorer */
-         -o-animation: fadein 0.7s; /* Opera  */
-            animation: fadein 0.7s;
+/*//////////////////////////////////////////////////////////////////*/
+
+.fadeIn * {
+  -webkit-animation: fadein 0.7s; /* Safari, Chrome and Opera  */
+     -moz-animation: fadein 0.7s; /* Firefox  */
+      -ms-animation: fadein 0.7s; /* Internet Explorer */
+       -o-animation: fadein 0.7s; /* Opera  */
+          animation: fadein 0.7s;
 }
 
 @keyframes fadein {

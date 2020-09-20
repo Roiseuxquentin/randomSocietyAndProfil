@@ -14,15 +14,16 @@ import Lycos from './Lycos.js'
 // #.\=============================================/.#
 // ###################################################
 
-const Image = ({page,bool,action, stopIt}) => {
+const Image = ({page,bool,action, stopIt, nb, city, zip}) => {
 
 	const openINSEE = (e) => {
 		e.preventDefault()
-		const url = "https://entreprise.data.gouv.fr/api_doc/"
+		const url = `https://www.openstreetmap.org/search?query=${zip}`
 		window.open(url,'_blank')
 	}
 
 	if (page == "siret") {
+		
 	    return (<div className="displayHover">
 		    		<svg className={(bool) ? "random fadeIn" : "randomMini coucou"} 
 	    				onClick={(e) => action(e)} onDoubleClick={() => (!!stopIt) ? stopIt() : null}
@@ -32,7 +33,7 @@ const Image = ({page,bool,action, stopIt}) => {
 				    	<path className="fadeIn" d="M0 0h24v24H0z" fill="none"/>
 					</svg>
 			    	{(bool)  
-			    		? <p className="aide" > Les entreprises sont selectionnees aleatoirement dans l'<span className="finger blueHover" onClick={(e) => openINSEE(e)} >INSEE</span>.</p>
+			    		? <p className="aide" >  {nb} entreprises proposèes alèatoirement. Provenance : <span className="finger blueHover" onClick={(e) => openINSEE(e)} >{city}</span>.</p>
 			    		: console.log("")}
 		    	</div> )
 
@@ -47,14 +48,14 @@ const Image = ({page,bool,action, stopIt}) => {
 					</svg>
 
 			    	{(!bool)  
-			    		? <p className="aide" >Les profils proposees sont gènèrès alèatoirement.</p>
+			    		? <p className="aide" >Les profils proposees seront fictifs et gènèrès alèatoirement.</p>
 			    		: true}
 
 		    	</div> )
 	} else {
 	    return (<div className="displayHover "><Lycos /></div> )
 	    return (<div/>)
-	}
+	}	
 }
 
 export default Image;
