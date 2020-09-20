@@ -1,6 +1,7 @@
 ## Commercial Tool
-  Profils : Generateur de profils fictifs et aleatoire pour des simulations  
+  Profils : Generateur de profils fictifs et aleatoire pour des simulations.  
   Societe : Generateur de societe existante , proposees aleatoirement parmis les 700 plus grandes villes en France.  
+  Recherche : Recherche d information a partir d'un SIRET ou d une denomination social.  
 
 ### DATA
 
@@ -23,3 +24,5 @@
 ![github-small](https://github.com/Roiseuxquentin/randomSocietyAndProfil/blob/master/demoScreen/demo0.png)
 ![github-small](https://github.com/Roiseuxquentin/randomSocietyAndProfil/blob/master/demoScreen/demo2.png)
 ![github-small](https://github.com/Roiseuxquentin/randomSocietyAndProfil/blob/master/demoScreen/demo3.png)
+
+2020.
