@@ -1,16 +1,25 @@
-## Available Scripts
+## Commercial Tool
+Profils : Generateur de profils fictifs et aleatoire pour des simulations
+Societe : Generateur de societe existante , proposees aleatoirement parmis les 700 plus grandes villes en France.
 
-### `npm run build`
+### DATA
 
+**Note: Data extract and transform from differents source.**
 
-### `npm run eject`
+[prenoms & genre](https://reactjs.org/) from https://api.gouv.fr.
+[patronymes](https://reactjs.org/) from top 200 common.
+[villes](https://reactjs.org/) from https://api.gouv.fr.
+[zipCodes](https://reactjs.org/) from top 700 biggest towns (for SIRET selection).
+[metiers](https://reactjs.org/)from 'registre des metiers'.
+[mails providers](https://reactjs.org/).
+[societe](https://reactjs.org/) from INSEE.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Birth date // Old years , and phone number from `Math.random()`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### SCREENSHOT
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### `npm run build` fails to minify
+![github-small](https://github.com/Roiseuxquentin/randomSocietyAndProfil/blob/master/demoScreen/demo4.png)
+![github-small](https://github.com/Roiseuxquentin/randomSocietyAndProfil/blob/master/demoScreen/demo6.png)
+![github-small](https://github.com/Roiseuxquentin/randomSocietyAndProfil/blob/master/demoScreen/demo1.png)
+![github-small](https://github.com/Roiseuxquentin/randomSocietyAndProfil/blob/master/demoScreen/demo2.png)
+![github-small](https://github.com/Roiseuxquentin/randomSocietyAndProfil/blob/master/demoScreen/demo3.png)
