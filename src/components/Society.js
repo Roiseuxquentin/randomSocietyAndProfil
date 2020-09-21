@@ -39,7 +39,7 @@ class Society extends Component {
 
   componentDidMount() {
     this.INSEE()
-    setTimeout(() => this.INSEE() , 6500 )
+    // setTimeout(() => this.INSEE() , 6500 )
   }
 
   INSEE() {
